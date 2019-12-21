@@ -7,7 +7,7 @@ MAINTAINER minipaper <pianoday@gmail.com>
 
 RUN apk add --no-cache npm \
     && npm --version \
-    && npm install -g smi2srt
+    && npm install -g smi2srt \
     && smi2srt --version
 
 WORKDIR /data
