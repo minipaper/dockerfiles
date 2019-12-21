@@ -1,8 +1,16 @@
-FROM node:12.14.0-alpine
+#
+# Dockerfile for smi2srt
+#
 
-# Install smi2srt
-RUN npm install -g smi2srt
+FROM alpine
+MAINTAINER minipaper <pianoday@gmail.com>
 
-VOLUME ["/opt/smi"]
+RUN apk add --no-cache npm \
+    && npm --version \
+    && npm install -g smi2srt
+    && smi2srt --version
 
-ENTRYPOINT ["smi2srt", "-n", "/opt/smi"]
+WORKDIR /data
+
+ENTRYPOINT ["smi2srt"]
+CMD ["--help"]
