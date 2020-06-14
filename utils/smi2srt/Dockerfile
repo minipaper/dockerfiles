@@ -13,4 +13,4 @@ RUN apk add --no-cache npm \
 WORKDIR /data
 
 ENTRYPOINT ["smi2srt"]
-CMD ["."]
+CMD ["-n", "."]
