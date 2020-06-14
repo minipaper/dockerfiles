@@ -1,5 +1,8 @@
 Convert subtitles in ".smi" or ".ass" format to ".srt" format.
 
+# Dockerfile
+https://github.com/minipaper/dockerfiles/tree/master/utils/smi2srt
+
 # Usage
 
 In Windows Command Line (cmd)
@@ -15,6 +18,11 @@ docker run --rm -v ${pwd}:/data minipaper/smi2srt
 On Linux:
 ```shell script
 docker run --rm -v $(pwd):/data minipaper/smi2srt
+```
+
+On Synology task scheduler script
+```shell script
+docker run --rm -v /volume1/video:/data minipaper/smi2srt
 ```
 
 # create an alias
